@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cipher Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cipher Calculator</h1>
+        
+        <label for="text">Input Text:</label>
+        <textarea id="text" rows="4"></textarea>
+
+        <label for="key">Key:</label>
+        <input type="text" id="key">
+
+        <label for="cipherType">Select Cipher Type:</label>
+        <select id="cipherType">
+            <option value="vigenere">Vigenere Cipher</option>
+            <option value="autokey">Auto-key Vigenere Cipher</option>
+            <option value="playfair">Playfair Cipher</option>
+        </select>
+
+        <button onclick="processCipher()">Process</button>
+
+        <label for="result">Result:</label>
+        <textarea id="result" rows="4" readonly></textarea>
+
+        <button onclick="saveToFile()">Save to File</button>
+
+        <input type="file" id="fileInput" onchange="loadFromFile()">
+    </div>
+    
+    <script src="vigenere.js"></script>
+    <script src="autokey.js"></script>
+    <script src="playfair.js"></script>
+    <script src="ciphers.js"></script>
+</body>
+</html>
